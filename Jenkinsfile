@@ -29,17 +29,17 @@ pipeline {
                 bat """
                    @echo off
 
-                   REM Check if the service is running on port 3900
-                   netstat -ano | findstr ":3900.*LISTENING" >nul
+                   REM Check if the service is running on port 3930
+                   netstat -ano | findstr ":3930.*LISTENING" >nul
                    if %errorlevel% equ 0 (
                        REM If service is running, find its PID and kill the process
-                       for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":3900.*LISTENING"') do (
-                           echo Service running on port 3900 with PID: %%a
+                       for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":3930.*LISTENING"') do (
+                           echo Service running on port 3930 with PID: %%a
                            taskkill /F /PID %%a >nul
-                           echo Service on port 3900 has been stopped.
+                           echo Service on port 3930 has been stopped.
                        )
                    ) else (
-                       echo No service found running on port 3900.
+                       echo No service found running on port 3930.
                    )
 
                     REM Exit with success code 0
@@ -53,7 +53,7 @@ pipeline {
                 bat """
                 echo "doing delivery stuff.."
                 cd docs
-                xcopy *.* "C:\\Sites\\chatai_web" /s /e /y
+                xcopy *.* "C:\\Sites\\chat_ai_web" /s /e /y
                 """
             }
         }
@@ -63,7 +63,7 @@ pipeline {
                 bat """
                 echo "doing delivery stuff.."
                 cd ..
-                xcopy *.* "C:\\Sites\\chatai_api" /s /e /y
+                xcopy *.* "C:\\Sites\\chat_ai_api" /s /e /y
                 """
             }
         }
