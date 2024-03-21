@@ -8,14 +8,6 @@ pipeline {
         pollSCM '*/5 * * * *'
     }
     stages {
-        stage('Dependencies') {
-            steps {
-                echo "Building.."
-                bat """
-                npm install
-                """
-            }
-        }
         stage('Test') {
             steps {
                 echo "Testing.."
@@ -47,6 +39,15 @@ pipeline {
                 """
             }
         }
+        stage('Deploy Api') {
+            steps {
+                echo 'Deliver....'
+                bat """
+                echo "doing delivery stuff.."
+                xcopy *.* "C:\\Sites\\chat_ai_api" /s /e /y
+                """
+            }
+        }
         stage('Deploy Web') {
             steps {
                 echo 'Deliver....'
@@ -57,13 +58,12 @@ pipeline {
                 """
             }
         }
-        stage('Deploy Api') {
+        stage('Dependencies') {
             steps {
-                echo 'Deliver....'
+                echo "Building.."
                 bat """
-                echo "doing delivery stuff.."
-                cd ..
-                xcopy *.* "C:\\Sites\\chat_ai_api" /s /e /y
+                cd "C:\\Sites\\chat_ai_api"
+                npm install
                 """
             }
         }
@@ -72,8 +72,8 @@ pipeline {
         success {
           echo "running.."
           bat """
-          cd "site-path"
-          node app.js
+          REM cd "site-path"
+          REM node app.js
           exit /b 0
           """
         }
