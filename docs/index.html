@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Custom Chat AI Gemini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Custom AI Chat with Gemini API</h1>
+    <h5>Ask about Luis Ventura</h5>
+
+    <div class="chat-container">
+        <div class="messages">
+
+            <img width="100" id="loader" src="loading.gif" />
+
+<!--            <div class="prompt-text bubble">-->
+<!--            </div>-->
+
+            <div class="response-text bubble">
+                How can i help?
+            </div>
+
+        </div>
+        <div class="input-prompt">
+            <textarea placeholder="ex: Who is Luis Ventura?" type="text" id="prompt" name="prompt"></textarea>
+            <button id="promptBtn">Send</button>
+        </div>
+    </div>
+    <a href="https://github.com/luisvent/gemini_ai_api"><img width="40px" src="github-logo.png" /></a>
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+{
+  "jwt_private_key": "jwt_private_key",
+  "gemini_private_key": "gemini_private_key"
+}

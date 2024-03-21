@@ -1,0 +1,12 @@
+{
+  "jwt_private_key": "jwt_private_key",
+  "gemini_private_key": "gemini_private_key",
+  "server": {
+    "host": "localhost",
+    "port": 3930
+  },
+  "db_url": "mongodb://localhost:27017/database",
+  "environment": "development",
+  "url": "http://localhost:3930/",
+  "context": ""
+}
