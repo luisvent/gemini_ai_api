@@ -26,12 +26,16 @@ document.addEventListener("DOMContentLoaded", function(){
     promptBtn$.addEventListener('click', () => {
         const prompt = promptInput$.value;
 
-
         if(prompt) {
             addPromptMessage(prompt)
-            makeAIRequest(prompt).then(response => {
-                addResponseMessage(response.data.response);
-            })
+
+            try {
+                makeAIRequest(prompt).then(response => {
+                    addResponseMessage(response.data.response);
+                })
+            } catch (e) {
+                addResponseMessage('Error communicating with AI');
+            }
         }
 
     });
