@@ -14,7 +14,7 @@ POST /
 
 ```json
 {
-  "prompt" : 'question about topic'
+  "prompt" : "question about topic"
 }
 ```
 
