@@ -47,12 +47,23 @@ pipeline {
                 """
             }
         }
-        stage('Deploy') {
+        stage('Deploy Web') {
             steps {
                 echo 'Deliver....'
                 bat """
                 echo "doing delivery stuff.."
-                xcopy *.* "site-path" /s /e /y
+                cd docs
+                xcopy *.* "C:\\Sites\\chatai_web" /s /e /y
+                """
+            }
+        }
+        stage('Deploy Api') {
+            steps {
+                echo 'Deliver....'
+                bat """
+                echo "doing delivery stuff.."
+                cd ..
+                xcopy *.* "C:\\Sites\\chatai_api" /s /e /y
                 """
             }
         }
