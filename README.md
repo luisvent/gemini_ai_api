@@ -4,7 +4,7 @@ This Node.js API provides a seamless interface for interacting with Google's Gem
 
 It uses specific information context to chat about.
 
-[LIVE DEMO](https://luisvent.github.io/gemini_ai_api/)
+[LIVE DEMO](https://chatai.lv-apps.com/)
 
 **Example Request**
 
